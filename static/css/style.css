@@ -1,0 +1,482 @@
+/* static/css/style.css */
+/* 重置和基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.7;
+    color: #2c3e50;
+    background-color: #fafafa;
+    font-size: 16px;
+}
+
+/* 容器 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 头部样式 */
+header {
+    background: white;
+    border-bottom: 1px solid #e1e8ed;
+    padding: 2rem 0;
+    margin-bottom: 3rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+}
+
+header h1 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header h1 a:hover {
+    color: #3182ce;
+}
+
+header p {
+    color: #718096;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* 导航样式 */
+nav {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+    padding: 0.2rem 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    position: relative;
+}
+
+nav a:hover {
+    color: #2563eb;
+    border-bottom: 2px solid #2563eb;
+    background: none;
+    text-decoration: none;
+}
+
+nav a.active {
+    color: #1d4ed8;
+    border-bottom: 2px solid #1d4ed8;
+    background: none;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+nav a.active:hover {
+    color: #1e40af;
+    border-bottom: 2px solid #1e40af;
+    text-decoration: none;
+}
+
+/* 文章列表样式 */
+section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+article {
+    padding: 2rem;
+    border-bottom: 1px solid #e1e8ed;
+}
+
+article:last-child {
+    border-bottom: none;
+}
+
+article h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+article h2 a {
+    color: #2d3748;
+    text-decoration: none;
+}
+
+article h2 a:hover {
+    color: #3182ce;
+}
+
+article time {
+    display: inline-block;
+    color: #718096;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    padding: 0.25rem 0.75rem;
+    background-color: #edf2f7;
+    border-radius: 4px;
+}
+
+article p {
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+/* 单篇文章样式 */
+.article-content {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 3rem;
+    margin-bottom: 2rem;
+}
+
+.article-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.article-content time {
+    display: inline-block;
+    color: #718096;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    padding: 0.5rem 1rem;
+    background-color: #edf2f7;
+    border-radius: 6px;
+}
+
+.article-content div {
+    color: #2d3748;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* 文章内容样式 */
+.article-content h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e1e8ed;
+}
+
+.article-content h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 1.5rem 0 0.75rem;
+}
+
+.article-content p {
+    margin-bottom: 1.5rem;
+}
+
+.article-content ul, .article-content ol {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+
+.article-content li {
+    margin-bottom: 0.5rem;
+}
+
+.article-content blockquote {
+    border-left: 4px solid #3182ce;
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: #4a5568;
+    background-color: #f7fafc;
+    padding: 1.5rem;
+    border-radius: 0 6px 6px 0;
+}
+
+.article-content code {
+    background-color: #f1f5f9;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+    font-size: 0.9em;
+    color: #dc2626;
+    border: 1px solid #e2e8f0;
+}
+
+.article-content pre {
+    background-color: #1e293b;
+    color: #e2e8f0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    position: relative;
+}
+
+.article-content pre::before {
+    content: attr(data-lang);
+    position: absolute;
+    top: 0.5rem;
+    right: 4.5rem;
+    background-color: #475569;
+    color: #f1f5f9;
+    padding: 0;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: none;
+    width: 2.5rem;
+    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    box-sizing: border-box;
+}
+
+.article-content pre:hover::before {
+    opacity: 1;
+}
+
+.article-content pre .copy-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    background-color: #475569;
+    color: #f1f5f9;
+    border: none;
+    padding: 0;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: 2.5rem;
+    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    box-sizing: border-box;
+}
+
+.article-content pre:hover .copy-btn {
+    opacity: 1;
+}
+
+.article-content pre .copy-btn:hover {
+    background-color: #64748b;
+    transform: translateY(-1px);
+}
+
+.article-content pre .copy-btn:active {
+    transform: translateY(0);
+}
+
+.article-content pre .copy-btn.copied {
+    background-color: #059669;
+    color: white;
+}
+
+.article-content pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    border: none;
+}
+
+/* 语法高亮样式优化 */
+.hljs {
+    background: transparent !important;
+    color: #e2e8f0 !important;
+}
+
+.hljs-keyword {
+    color: #fbbf24 !important;
+}
+
+.hljs-string {
+    color: #34d399 !important;
+}
+
+.hljs-comment {
+    color: #9ca3af !important;
+    font-style: italic;
+}
+
+.hljs-function {
+    color: #60a5fa !important;
+}
+
+.hljs-number {
+    color: #f87171 !important;
+}
+
+.hljs-operator {
+    color: #e2e8f0 !important;
+}
+
+.hljs-punctuation {
+    color: #e2e8f0 !important;
+}
+
+.hljs-built_in {
+    color: #a78bfa !important;
+}
+
+.hljs-type {
+    color: #fbbf24 !important;
+}
+
+/* 链接样式 */
+a {
+    color: #3182ce;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #2c5282;
+    text-decoration: underline;
+}
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: #718096;
+    font-size: 0.9rem;
+    border-top: 1px solid #e1e8ed;
+    margin-top: 3rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    header {
+        padding: 1.5rem 0;
+        margin-bottom: 2rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .article-content {
+        padding: 2rem;
+    }
+    
+    .article-content h1 {
+        font-size: 2rem;
+    }
+    
+    article {
+        padding: 1.5rem;
+    }
+}
+
+/* 关于页面样式 */
+.about-content {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 3rem;
+    margin-bottom: 2rem;
+}
+
+.about-info {
+    color: #2d3748;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.about-info h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    border-bottom: 3px solid #e2e8f0;
+    padding-bottom: 1rem;
+}
+
+.about-info h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e1e8ed;
+}
+
+.about-info h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 1.5rem 0 0.75rem;
+}
+
+.about-info p {
+    margin-bottom: 1.5rem;
+}
+
+.about-info ul, .about-info ol {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+
+.about-info li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.about-info strong {
+    color: #1a202c;
+    font-weight: 600;
+}
+
+.about-info a {
+    color: #3182ce;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.about-info a:hover {
+    border-bottom-color: #3182ce;
+}

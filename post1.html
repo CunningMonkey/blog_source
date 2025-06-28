@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my simple blog - 我的第一篇文章</title>
+    
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="index.html">my simple blog</a></h1>
+            <p>welcome to my simple blog</p>
+            <nav>
+                <a href="index.html">首页</a>
+                <a href="about.html">关于我</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <article class="article-content">
+            <h1>我的第一篇文章</h1>
+            <time>2023年10月1日</time>
+            <div><h2 id="heading">欢迎使用简易博客系统</h2>
+<p>这是 <strong>Markdown 内容</strong> 示例：</p>
+<ul>
+<li>支持基本格式化</li>
+<li>自动标题链接</li>
+<li>代码块展示</li>
+</ul>
+<pre style="color:#f8f8f2;background-color:#272822;"><code><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Hello, Blog!&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre><p><img src="static/img/example.png" alt="image1" /></p>
+</div>
+        </article>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 my simple blog</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const codeBlocks = document.querySelectorAll('pre code');
+            
+            codeBlocks.forEach(function(codeBlock) {
+                const pre = codeBlock.parentElement;
+                
+                
+                let language = 'code';
+                
+                
+                const codeClassList = codeBlock.classList;
+                for (let className of codeClassList) {
+                    if (className.startsWith('language-')) {
+                        language = className.replace('language-', '');
+                        break;
+                    } else if (className.startsWith('hljs-')) {
+                        
+                        continue;
+                    }
+                }
+                
+                
+                if (language === 'code') {
+                    const preClassList = pre.classList;
+                    for (let className of preClassList) {
+                        if (className.startsWith('language-')) {
+                            language = className.replace('language-', '');
+                            break;
+                        }
+                    }
+                }
+                
+                
+                if (language === 'code') {
+                    const code = codeBlock.textContent;
+                    if (code.includes('package main') || code.includes('func main()') || code.includes('import (')) {
+                        language = 'go';
+                    } else if (code.includes('function') || code.includes('const ') || code.includes('let ')) {
+                        language = 'javascript';
+                    } else if (code.includes('def ') || code.includes('import ')) {
+                        language = 'python';
+                    }
+                }
+                
+                
+                const languageMap = {
+                    'go': 'Go',
+                    'golang': 'Go',
+                    'js': 'JavaScript',
+                    'javascript': 'JavaScript',
+                    'ts': 'TypeScript',
+                    'typescript': 'TypeScript',
+                    'py': 'Python',
+                    'python': 'Python',
+                    'java': 'Java',
+                    'cpp': 'C++',
+                    'c': 'C',
+                    'html': 'HTML',
+                    'css': 'CSS',
+                    'json': 'JSON',
+                    'xml': 'XML',
+                    'yaml': 'YAML',
+                    'yml': 'YAML',
+                    'md': 'Markdown',
+                    'markdown': 'Markdown',
+                    'sh': 'Shell',
+                    'bash': 'Bash',
+                    'sql': 'SQL'
+                };
+                
+                const displayLanguage = languageMap[language.toLowerCase()] || language.toUpperCase();
+                
+                
+                pre.setAttribute('data-lang', displayLanguage);
+                
+                
+                const copyBtn = document.createElement('button');
+                copyBtn.className = 'copy-btn';
+                copyBtn.textContent = '复制';
+                copyBtn.onclick = function() {
+                    navigator.clipboard.writeText(codeBlock.textContent).then(function() {
+                        copyBtn.textContent = '已复制';
+                        copyBtn.classList.add('copied');
+                        setTimeout(function() {
+                            copyBtn.textContent = '复制';
+                            copyBtn.classList.remove('copied');
+                        }, 2000);
+                    }).catch(function(err) {
+                        console.error('复制失败:', err);
+                        copyBtn.textContent = '复制失败';
+                        setTimeout(function() {
+                            copyBtn.textContent = '复制';
+                        }, 2000);
+                    });
+                };
+                
+                pre.appendChild(copyBtn);
+            });
+        });
+    </script>
+</body>
+</html>
